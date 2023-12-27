@@ -18,7 +18,7 @@ ASMdenDegerAl proc
      ja ileri
      or al,00100000b
      ileri:
-        mov [rbx],al
+        mov byte ptr [rbx],al
         inc rdx
         inc rbx
         loop toUpper

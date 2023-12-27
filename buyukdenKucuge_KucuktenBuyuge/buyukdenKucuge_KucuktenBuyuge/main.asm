@@ -8,25 +8,25 @@ ASMdenDegerAl proc
     lea rbx,mybyte2
     mov rcx,14
 
-    toLowerOrUpper:
-     mov al,byte ptr[rdx]
-     cmp al,65
-     jb notLetter
-     cmp al,90
-     ja notLetter
-     or al, 00100000b  ; büyük harfi küçük harfe dönüþtürme
-     jmp nextChar
-    notLetter:
-     cmp al,97
-     jb nextChar
-     cmp al,122
-     ja nextChar
-     and al, 11011111b  ; küçük harfi büyük harde dönüþtürme
+    toUpper:
+        mov al,byte ptr [rdx]
+        cmp al,97
+        jb toLower
+        cmp al,122
+        ja nextChar
+        and al, 11011111b
+        jmp nextChar
+    toLower:
+        cmp al,65
+        jb nextChar
+        cmp al,90
+        ja nextChar
+        or al,00100000b
     nextChar:
         mov [rbx],al
         inc rdx
         inc rbx
-        loop toLowerOrUpper
+        loop toUpper
     ret
 ASMdenDegerAl endp
 end
