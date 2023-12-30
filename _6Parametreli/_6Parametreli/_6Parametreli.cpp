@@ -8,13 +8,13 @@ using namespace std;
 
 extern "C" void CallAppProcedure();
 
-extern "C" void MyProc(int a, int b, int c, int d, int e, int f) {
-    cout<<"Sonuncu parametre sirasi"<<f<<endl;
-}
+extern "C" void MyProc(int a, int b, int c, int d, int e, int f);
+    
+
 
 int main()
 {
-    CallAppProcedure();
+    MyProc(1, 2, 3, 4, 5, 6);
     _getch();
     return 0;
 }

@@ -9,11 +9,11 @@ testFunction proc
 	
 	lea rbx, MyByte
 	lea rax, MyByte2
-	push 0BEBAh
+	push 0BEBAFECAh
 	push word ptr [MyByte2]
 	mov rax,123h
-	push ax
-	pop bx
+	
+	pop rbx
 	lea rdx, enyuksek 
 
 testFunction endp

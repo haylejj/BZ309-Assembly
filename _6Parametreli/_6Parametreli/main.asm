@@ -1,7 +1,7 @@
-extern MyProc:proc
+
 
 .code
-CallAppProcedure proc
+MyProc proc
     sub rsp,30h
 
     mov ecx,1
@@ -10,8 +10,7 @@ CallAppProcedure proc
     mov r9d,4
     mov dword ptr [rsp+20h],5
     mov dword ptr [rsp+28h],6
-    call MyProc
     add rsp,30h
     ret
-CallAppProcedure endp
+MyProc endp
 end
