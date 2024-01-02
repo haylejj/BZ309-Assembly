@@ -8,7 +8,7 @@ test2 proc
 
 	lea rax,MyByte
 	lea rbx,MyByte2
-	lea rcx,MyByte3
+	lea ecx,MyByte3
 
 
 	ret

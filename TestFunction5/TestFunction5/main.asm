@@ -13,7 +13,7 @@ test2 proc
 	;lea rbx,veri
 
 	lea rax,veri4
-	mov rbx,[rax+2]
+	mov rbx,[rax]
 
 	ret
 

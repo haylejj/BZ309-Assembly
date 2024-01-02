@@ -6,7 +6,6 @@ array db 10h,20h,30h,40h,50h
 reverseArray proc
 	
 	lea rbx,array
-	lea r11,array
 	mov r8,rbx
 	add r8,4
 	mov cx,2
@@ -21,7 +20,6 @@ reverseArray proc
 	dec r8
 	dec cx
 	jnz dongu
-	mov rbx,r11
 	ret
 reverseArray endp
 end

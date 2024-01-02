@@ -12,9 +12,9 @@ ASMdenDegerAl proc
 
     toUpper:
      mov al,byte ptr[rdx]
-     cmp al,65
+     cmp al,'A'
      jb ileri
-     cmp al,90
+     cmp al,'Z'
      ja ileri
      or al,00100000b
      ileri:

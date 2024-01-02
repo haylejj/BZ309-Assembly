@@ -10,16 +10,16 @@ ASMdenDegerAl proc
 
     toUpper:
         mov al,byte ptr [rdx]
-        cmp al,97
+        cmp al,'a'
         jb toLower
-        cmp al,122
+        cmp al,'z'
         ja nextChar
         and al, 11011111b
         jmp nextChar
     toLower:
-        cmp al,65
+        cmp al,'A'
         jb nextChar
-        cmp al,90
+        cmp al,'Z'
         ja nextChar
         or al,00100000b
     nextChar:

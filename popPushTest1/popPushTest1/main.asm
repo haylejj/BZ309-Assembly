@@ -1,16 +1,16 @@
 .data 
-myByte dd 1234,5678h
+myByte dq 1234,5678h
 
 .code 
 test2 proc
 	
 	lea rdx,myByte
+	
+	push qword ptr [myByte]
+	
+	push 942356h
 
-	mov rax, qword ptr [myByte]
-	push rax
-	push 94235633h
-
-	pop rax
+	pop ax
 	pop rax
 
 	ret

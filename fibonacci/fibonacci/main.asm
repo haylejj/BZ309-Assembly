@@ -18,5 +18,6 @@ dongu:
 	xchg rax,rbx
 	loop dongu
 
+	ret
 fibonacci endp
 end
