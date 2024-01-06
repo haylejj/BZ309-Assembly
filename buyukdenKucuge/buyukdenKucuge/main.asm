@@ -5,23 +5,27 @@ mybyte2 db 14 dup(?)
 .code
 ASMdenDegerAl proc 
    
+   lea rdx,mybyte
+   lea rbx,mybyte2
 
-    lea rdx,mybyte
-    lea rbx,mybyte2
-    mov rcx,14
+   mov cx,14
 
-    toUpper:
-     mov al,byte ptr[rdx]
-     cmp al,'A'
-     jb ileri
-     cmp al,'Z'
-     ja ileri
-     or al,00100000b
-     ileri:
-        mov byte ptr [rbx],al
-        inc rdx
-        inc rbx
-        loop toUpper
+   toLower:
+    mov al,byte ptr [rdx]
+    cmp al,'A'
+    jb next
+    cmp al,'Z'
+    ja next
+    or al,00100000b
+
+    next:
+    mov byte ptr [rbx],al
+    inc rdx
+    inc rbx
+    dec cx
+    jnz toLower
+    
+    
 ret
 ASMdenDegerAl endp
 end

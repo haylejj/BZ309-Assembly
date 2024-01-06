@@ -6,10 +6,12 @@ MyByte3 db ?
 .code 
 test2 proc
 
+	;lea rcx,MyByte3
+	;lea rbx,MyByte2
+	;lea rax,MyByte
 	lea rax,MyByte
 	lea rbx,MyByte2
-	lea ecx,MyByte3
-
+	lea rcx,MyByte3
 
 	ret
 test2 endp

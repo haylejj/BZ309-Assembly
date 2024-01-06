@@ -1,23 +1,28 @@
 .code 
 GCD proc
 	
+	;ecx birinci parametre 
+	;edx ikinci parametre
+
 	mov r9d,edx
 
-	AnaDongu:
+	dongu:
+		
 		cmp r9d,0
-		jle Bitti
-		mov r8d,r9d
+		je bitti
 
+		mov r8d,edx
+		mov eax,ecx
 		xor edx,edx
-		mov eax,ecx
-		idiv r9d
+		div r8d
 		mov r9d,edx
-
 		mov ecx,r8d
-		jmp AnaDongu
-
-	Bitti:
+	jmp dongu
+	bitti:
 		mov eax,ecx
-		ret
+	ret
+
+	
+		
 	GCD endp
 	end
