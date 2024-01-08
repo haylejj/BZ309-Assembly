@@ -17,7 +17,7 @@ findA proc
 	dec rbx
 
 	cmp cx,5
-	jb dongu
+	jl dongu
 	mov cx,5
 
 	dongu:
